@@ -9,9 +9,10 @@ app.set('port',(process.env.PORT || 5000))
 
 
 bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: '[Help.exe] Bot By Tuic242', type: 0}});
-    console.log("Bot Ready !");
-})
+	console.log('Bot Launched..')
+	bot.user.setStatus('Online')
+        bot.user.setActivity('les sapeurs pompiers', ({type: "WATCHING"}))
+});
 
 
 bot.on('message', function (message) {
@@ -34,3 +35,4 @@ bot.on('message', function (message) {
 })
 
 bot.login(process.env.TOKEN)
+
